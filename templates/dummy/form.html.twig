@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% for message in app.flashes('success') %}
+        <div class="success">{{ message }}</div>
+    {% endfor %}
+
+    {{ form_start(form, {attr: {'novalidate': 'novalidate'}}) }}
+        {{ form_widget(form) }}
+        <button>Envoyer</button>
+    {{ form_end(form) }}
+
+{% endblock %}
